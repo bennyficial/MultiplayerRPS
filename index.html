@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+	<title>Rock, Paper, Scissors</title>
+</head>
+<body>
+ <div class="row">
+		<div style = " background-color: black" class="jumbotron">
+      <h1 style = "color: white;" class="text-center">Rock Paper Scissors Challenge</h1>
+    </div>
+  <div class="row">
+    <div class="col-lg-12">
+	<!-- <div class="container"> -->
+	<div class="row">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-4 text-center">
+			<div id="custom-name-input">
+				<form>
+					<div class="input-group col-xs-12 form-group">
+						<input id="name" type="text" class="form-control" placeholder="Your Name"/>
+						<span class="input-group-btn">
+						<button class="btn btn-default" type="submit" id="submit-button">Submit</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col-xs-4"></div>
+	</div>
+
+	<div class="row text-center" id="user-section">
+			<div class="user col-xs-4">
+				<h4>Player 1: </h4>
+				<p id="player1"></p>
+				<p id="wins1"></p>
+				<p id="losses1"></p>
+				<p id="ties1"></p>
+			</div>
+			<div id="instructions-div" class="text-center col-xs-4">
+				<h4>Instructions: </h4>
+				<p id="instructions">Enter your name above to join the game.</p>
+				<p id="choice1"></p>
+				<p id="choice2"></p>
+			</div>
+			<div class="user col-xs-4">
+				<h4>Player 2: </h4>
+				<p id="player2"></p>
+				<p id="wins2"></p>
+				<p id="losses2"></p>
+				<p id="ties2"></p>
+			</div>
+	</div>
+		
+	<div class="row" id="choice-section">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10 text-center">
+			<div class="choice" id="rock" data-choice="rock">
+				<h4 class="text-center"><button class ="btn btn-default">Rock</button></h4>
+				<img class="img-responsive choice-img" src=" "/>
+			</div>
+			<div class="choice" id="paper" data-choice="paper">
+				<h4 class="text-center"><button class ="btn btn-default">Paper</button></h4>
+				<img class="img-responsive choice-img" src=" "/>
+			</div>
+			<div class="choice" id="scissors" data-choice="scissors">
+				<h4 class="text-center"><button class ="btn btn-default">Scissors</button></h4>
+				<img class="img-responsive choice-img" src=" "/>
+			</div>
+		</div>
+		<div class="col-xs-1"></div>
+	</div>	
+	 </div>
+	<!-- <div class="row" id="chat-row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8">
+			<h3 class="text-center">Chat: </h3>
+			<div id="chat-window">
+			</div>
+			<div id="input">
+				<form>
+					<div class="input-group col-xs-12 form-group">
+						<input id="chat" type="text" class="form-control"/>
+						<span class="input-group-btn">
+						<button class="btn btn-default" type="submit" id="send-button">Send
+						</button>
+						</span>
+					</div>
+				</form>	
+			</div>
+		</div>
+		<div class="col-xs-2"></div>
+	</div> -->
+	<!-- <div class="row" id="chat-row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+      <div class="panel-default">
+        <h3 class="text-center">Chat:</h3>
+      </div>
+      <div id="chat-window" row="10" style="height: 200px; background-color: gray">
+      </div>
+      <div id="input">
+        <form>
+          <div class="input-group col-xs-12 form-group">
+            <input id="chat" type="text" class="form-control"/>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit" id="send-chat">Send
+            </button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-xs-2"></div>
+  </div> -->
+<div class="row" id="chat-row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+      <h3 class="text-center">Chat: </h3>
+      <div id="chat-window">
+      </div>
+      <div id="input">
+        <form>
+          <div class="input-group col-xs-12 form-group">
+            <input id="chat" type="text" class="form-control"/>
+            <span class="input-group-btn">
+            <button class="btn btn-default" type="submit" id="send-button">Send
+            </button>
+            </span>
+          </div>
+        </form> 
+      </div>
+    </div>
+    <div class="col-xs-2"></div>  
+</div>
+<script src="logic.js"></script>
+</body>
+</html>
